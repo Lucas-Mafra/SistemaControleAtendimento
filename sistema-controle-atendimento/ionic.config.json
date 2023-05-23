@@ -1,0 +1,7 @@
+{
+  "name": "sistema-controle-atendimento",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
