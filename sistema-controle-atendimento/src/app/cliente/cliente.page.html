@@ -7,7 +7,36 @@
     </ion-toolbar>
   </ion-header>
   <!-- input para por o cpf e encontrar a senha -->
+  <ion-item>
+    <ion-label position="floating">CPF</ion-label>
+    <ion-input type="tel" maxlength="14" inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"></ion-input>
+  </ion-item>
+  
   <!-- Mostrar a senha -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Senha Gerada</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Senha:</ion-label>
+        <ion-text>Senha Gerada</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
   <!-- Lista com as 5 ultimas senhas chamadas -->
+  <ion-list>
+    <ion-list-header>
+      Últimas Senhas Geradas
+    </ion-list-header>
+  
+    <!--
+    <ion-item *ngFor="let senha of ultimasSenhas">
+      <ion-label>{{ senha }}</ion-label>
+    </ion-item>
+    -->
+  </ion-list>
 
 </ion-content>
