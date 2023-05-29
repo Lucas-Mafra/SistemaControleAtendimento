@@ -5,23 +5,27 @@
         Página do Cliente
       </ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> <br>
   <!-- input para por o cpf e encontrar a senha -->
   <ion-item>
     <ion-label position="floating">CPF</ion-label>
-    <ion-input type="tel" maxlength="14" inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"></ion-input>
+    <ion-input type="tel" maxlength="11" inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"></ion-input>
   </ion-item>
+
+  <div style="text-align: center; margin-top: 10px;">
+    <ion-button size="large">Pesquisar</ion-button> <br>
+  </div>
   
   <!-- Mostrar a senha -->
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Senha Gerada</ion-card-title>
+      <ion-card-title>Sua Senha</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
       <ion-item>
         <ion-label>Senha:</ion-label>
-        <ion-text>Senha Gerada</ion-text>
+        <ion-text></ion-text>
       </ion-item>
     </ion-card-content>
   </ion-card>
@@ -29,7 +33,7 @@
   <!-- Lista com as 5 ultimas senhas chamadas -->
   <ion-list>
     <ion-list-header>
-      Últimas Senhas Geradas
+      Últimas Senhas Chamadas
     </ion-list-header>
   
     <!--
