@@ -17,4 +17,6 @@ import { EmissorPage } from './emissor.page';
   ],
   declarations: [EmissorPage]
 })
-export class EmissorPageModule {}
+export class EmissorPageModule {
+
+}

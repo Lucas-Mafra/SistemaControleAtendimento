@@ -11,9 +11,9 @@
   <div style="text-align: center;">
     <ion-item>
       <ion-label position="floating">CPF</ion-label>
-      <ion-input type="tel" maxlength="11" inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" ></ion-input>
+      <ion-input [(ngModel)]="cpf" type="tel" maxlength="11"></ion-input>
     </ion-item> <br>
-    <ion-button size="large">Senha prioritaria</ion-button> <br>
+    <ion-button size="large" (click)="gerarSenhasSP()">Senha prioritaria</ion-button> <br>
     <ion-button size="large">Senha geral</ion-button> <br>
     <ion-button size="large">Senha exames</ion-button>
     
