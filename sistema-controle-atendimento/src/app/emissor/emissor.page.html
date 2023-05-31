@@ -14,10 +14,8 @@
       <ion-input [(ngModel)]="cpf" type="tel" maxlength="11"></ion-input>
     </ion-item> <br>
     <ion-button size="large" (click)="gerarSenhasSP()">Senha prioritaria</ion-button> <br>
-    <ion-button size="large">Senha geral</ion-button> <br>
-    <ion-button size="large">Senha exames</ion-button>
-    
-    
+    <ion-button size="large" (click)="gerarSenhasSG()">Senha geral</ion-button> <br>
+    <ion-button size="large" (click)="gerarSenhasSE()">Senha exames</ion-button>
   </div>
 
 </ion-content>

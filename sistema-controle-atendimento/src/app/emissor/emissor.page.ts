@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SenhasService } from '../service/senhas.service';
 
 @Component({
   selector: 'app-emissor',
@@ -6,9 +7,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./emissor.page.scss'],
 })
 export class EmissorPage implements OnInit {
-  // Array que irá salvar as senhas geradas pelo botão, será utilizada o esquema chave → valor,
-  // sendo, respectivamente, cpf e senha
-  senhas: {chave: number, valor: any}[] = [];
 
   // Pegar a data atual
   dataAtual = new Date();
@@ -24,27 +22,38 @@ export class EmissorPage implements OnInit {
   // Variavel para salvar o cpf
   cpf: number = 0;
 
-  // Métodos para gerar as senhas
-  gerarSenhasSP(){
-    this.senhas.push({chave: this.cpf, valor: this.ano+ "/" + this.mes + "/" + this.dia + "-SP" + this.SqSp})
-    this.cpf = 0;
-    this.SqSp++;
-  }
-  gerarSenhasSE(){
-    this.senhas.push({chave: this.cpf, valor: this.ano+ "/" + this.mes + "/" + this.dia + "-SE" + this.SqSe})
-    this.cpf = 0;
-    this.SqSe++;
-  }
-  gerarSenhasSG(){
-    this.senhas.push({chave: this.cpf, valor: this.ano+ "/" + this.mes + "/" + this.dia + "-SG" + this.SqSg})
-    this.cpf = 0;
-    this.SqSg++;
-  }
-
-  constructor() {
-   }
+  constructor(private senhas: SenhasService) { }
 
   ngOnInit() {
+  }
+
+  // Métodos para gerar as senhas
+  gerarSenhasSP(){
+    const chave: number = this.cpf;
+    const valor: string = this.ano+ "/" + this.mes + "/" + this.dia + "-SP" + this.SqSp;
+    this.senhas.adicionarSenha(chave, valor);
+    this.cpf = 0;
+    this.SqSp++;
+
+    console.log(this.senhas.obterSenha(chave));
+  }
+  gerarSenhasSE(){
+    const chave: number = this.cpf;
+    const valor: string = this.ano+ "/" + this.mes + "/" + this.dia + "-SE" + this.SqSe;
+    this.senhas.adicionarSenha(chave, valor);
+    this.cpf = 0;
+    this.SqSe++;
+
+    console.log(this.senhas.obterSenha(chave));
+  }
+  gerarSenhasSG(){
+    const chave: number = this.cpf;
+    const valor: string = this.ano+ "/" + this.mes + "/" + this.dia + "-SG" + this.SqSg;
+    this.senhas.adicionarSenha(chave, valor);
+    this.cpf = 0;
+    this.SqSg++;
+
+    console.log(this.senhas.obterSenha(chave));
   }
 
 }
